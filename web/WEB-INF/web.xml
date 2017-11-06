@@ -3,4 +3,44 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+    <servlet>
+        <servlet-name>CookieDemo01Servlet</servlet-name>
+        <servlet-class>cookie.CookieDemo01Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CookieDemo01Servlet</servlet-name>
+        <url-pattern>/CookieDemo01.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SessionDemo01</servlet-name>
+        <servlet-class>session.SessionDemo01Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SessionDemo01</servlet-name>
+        <url-pattern>/SessionDemo01.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DoForm</servlet-name>
+        <servlet-class>session.DoFormServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DoForm</servlet-name>
+        <url-pattern>/DoForm.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Form</servlet-name>
+        <servlet-class>session.FormServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Form</servlet-name>
+        <url-pattern>/Form.do</url-pattern>
+    </servlet-mapping>
+
+    <!--设置Session的有效时间；以分钟为单位-->
+    <session-config>
+        <session-timeout>15</session-timeout>
+    </session-config>
 </web-app>
