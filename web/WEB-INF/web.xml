@@ -39,6 +39,33 @@
         <url-pattern>/Form.do</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>IndexServlet</servlet-name>
+        <servlet-class>session.IndexServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>IndexServlet</servlet-name>
+        <url-pattern>/Index.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BuyServlet</servlet-name>
+        <servlet-class>session.BuyServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BuyServlet</servlet-name>
+        <url-pattern>/Buy.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ListCartServlet</servlet-name>
+        <servlet-class>session.ListCartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListCartServlet</servlet-name>
+        <url-pattern>/ListCart.do</url-pattern>
+    </servlet-mapping>
+
     <!--设置Session的有效时间；以分钟为单位-->
     <session-config>
         <session-timeout>15</session-timeout>
