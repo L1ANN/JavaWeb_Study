@@ -25,7 +25,7 @@ public class IndexServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         //创建Session
         request.getSession();
-        out.println("The Book List:<br/>");
+        out.println("The Books:<br/>");
         Set<Map.Entry<String, Book>> set = DB.getAll().entrySet();
 
         for (Map.Entry<String, Book> me : set) {
