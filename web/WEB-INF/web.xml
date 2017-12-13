@@ -66,8 +66,46 @@
         <url-pattern>/ListCart.do</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>RegisterUIServlet</servlet-name>
+        <servlet-class>servlet.RegisterUIServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterUIServlet</servlet-name>
+        <url-pattern>/RegisterUI.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>servlet.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/Register.do</url-pattern>
+    </servlet-mapping>
+
     <!--设置Session的有效时间；以分钟为单位-->
     <session-config>
         <session-timeout>15</session-timeout>
     </session-config>
+
+    <!--登录请求的Servlet-->
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/Login.do</url-pattern>
+    </servlet-mapping>
+
+    <!--实现自动登陆的Filter-->
+    <filter>
+        <filter-name>AutoLoginFilter</filter-name>
+        <filter-class>filter.AutoLoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AutoLoginFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 </web-app>

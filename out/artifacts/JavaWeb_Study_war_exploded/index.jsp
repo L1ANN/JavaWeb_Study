@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>网站首页</title>
   </head>
   <body>
-  $END$
+  欢迎您:${user.username}
   </body>
 </html>
