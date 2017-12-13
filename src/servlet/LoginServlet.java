@@ -27,15 +27,15 @@ public class LoginServlet extends HttpServlet {
 
         LoginService loginService = new LoginService();
 
-        User user = loginService.login(username,password);
+        User user = loginService.login(username, password);
 
-        if(user==null){
-            request.setAttribute("message","用户名或密码错误");
-            request.getRequestDispatcher("/message.jsp").forward(request,response);
+        if (user == null) {
+            request.setAttribute("message", "用户名或密码错误");
+            request.getRequestDispatcher("/message.jsp").forward(request, response);
             return;
         }
 
-        request.getSession().setAttribute("user",user);
+        request.getSession().setAttribute("user", user);
 
         boolean remember = Boolean.parseBoolean(request.getParameter("remember"));
 
@@ -50,26 +50,26 @@ public class LoginServlet extends HttpServlet {
     }
 
     //构造Cookie
-    private Cookie makeCookie(User user){
+    private Cookie makeCookie(User user) {
         long currentTime = System.currentTimeMillis();
         //构造出cookie的值
-        String cookieValue = user.getUsername()+":"+(currentTime+5*60*1000)+":"+md5(user.getUsername(),user.getPassword(),(currentTime+5*60*1000));
-        Cookie cookie = new Cookie("autologin",cookieValue);
+        String cookieValue = user.getUsername() + ":" + (currentTime + 5 * 60 * 1000) + ":" + md5(user.getUsername(), user.getPassword(), (currentTime + 5 * 60 * 1000));
+        Cookie cookie = new Cookie("autologin", cookieValue);
         //设置cookie的保存时间为5分钟
-        cookie.setMaxAge(5*60);
+        cookie.setMaxAge(5 * 60);
         cookie.setPath("/JavaWeb_Study");
         return cookie;
     }
 
     //对CookieValue进行md5加密
-    private String md5(String username,String password,long expirestime){
-        try{
-            String value = password+":"+expirestime+":"+username;
+    private String md5(String username, String password, long expirestime) {
+        try {
+            String value = password + ":" + expirestime + ":" + username;
             MessageDigest md = MessageDigest.getInstance("md5");
             byte[] md5 = md.digest(value.getBytes());
             BASE64Encoder encoder = new BASE64Encoder();
             return encoder.encode(md5);
-        }catch(Exception e){
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }

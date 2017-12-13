@@ -10,13 +10,13 @@ import java.io.IOException;
 /**
  * @Author:L1ANN
  * @Description:
- * @Date:Created in 16:16 2017/12/12
+ * @Date:Created in 13:40 2017/12/13
  * @Modified By:
  */
-@WebServlet(name = "RegisterUIServlet")
-public class RegisterUIServlet extends HttpServlet {
+@WebServlet(name = "UserDetailUIServlet", urlPatterns = "/UserDetailUI.do")
+public class UserDetailUIServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/pages/register.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/pages/detailuser.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -17,8 +17,10 @@ public class User implements Serializable {
     private String password;
     private String email;
     private Date birthday;
+    private String pic;
 
-    public User(){}
+    public User() {
+    }
 
     public User(String username, String password) {
         this.username = username;
@@ -63,6 +65,14 @@ public class User implements Serializable {
 
     public void setBirthday(Date birthday) {
         this.birthday = birthday;
+    }
+
+    public String getPic() {
+        return pic;
+    }
+
+    public void setPic(String pic) {
+        this.pic = pic;
     }
 
     @Override
